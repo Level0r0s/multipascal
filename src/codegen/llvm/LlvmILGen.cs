@@ -534,7 +534,7 @@ namespace MultiPascal.Codegen.LlvmIL
 		}
 		
 		// Currently only working with ints
-		public override Value Visit(ArithmethicBinaryExpression node)
+		public override Value Visit(ArithmeticBinaryExpression node)
 		{
 			Visit((BinaryExpression)node);
 			Value l = traverse(node.left);
