@@ -7,21 +7,20 @@ MultiPascal was started in January 2014 and it's still in its early stages. As o
 
 Planned stages of the project:
 
-* a Delphi front-end for LLVM
+* a Delphi front-end for LLVM   
 
 	Initially we thought of using the [Dgrok][19] recursive-descent (LL(k)) parser. However, looking at the work required to convert the simple lexical-oriented Parse Tree that Dgrok produces to a robust complete AST, we decided to create our own shift-reduce parser.     
 	So MultiPascal ended up with a complete new shift-reduce (LALR) parser created with the C# ports of the Jay Yacc-based parser generator ([CSJay][10]) and the JFlex lexer generator ([CSFlex][12]).     
-	Currently MultiPascal is built on top of [LLVM 3.2][6], the same version used in [FlaCC/Crossbridge][15].     
+	Currently MultiPascal is built on top of [LLVM 3.2][6], the same version used in [FlaCC/Crossbridge][14].  
 
+* a C++ back-end   
 
-* a C++ back-end
-	
-* AS3 (Flash) back-end
-	
-* ABC (AS3 bytecode) back-end, based on [FlaCC/Crossbridge][15]  
+* AS3 (Flash) back-end   
 
+	We meant to emulate the manual memory management of Delphi through the Flash domain memory component, which was introduced in AS3 to support the FlaCC/Crossbridge C++ compiler. Some documentation on manual memory management in Flash can be found [here](https://github.com/adobe-flash/crossbridge/wiki/Memory-Fragmentation)   
 
-      
+* ABC (AS3 bytecode) back-end, based on the [AVM2 target developed in FlaCC/Crossbridge][15]  
+
 
 
 **References:**
@@ -55,7 +54,6 @@ Planned stages of the project:
 [21]:http://llvm.org/docs/ProgrammersManual.html
 [22]:http://llvm.org/docs/LangRef.html
 
-
 * Parser/Lexer
 	
 	[Yacc/Flex docs][8]   
@@ -73,16 +71,16 @@ Planned stages of the project:
 * Flash
 
 	[AS3 documentation][13]   
-	[Crossbridge][14]    
-	[FlaCC/Crossbridge][15]      
-	[AVM overview][16]
-	[Tamarin JS/AS engine][24]
+	[FlaCC/Crossbridge][14]    
+	[FlaCC/Crossbridge LLVM target for the AVM2][15]      
+	[AVM overview][16]        
+	[Tamarin JS/AS engine][24]         
 
 [13]:http://www.adobe.com/devnet/actionscript/documentation.html   
 [14]:http://adobe-flash.github.io/crossbridge   
-[15]:https://github.com/adobe-flash/crossbridge   
-[16]:http://www.adobe.com/content/dam/Adobe/en/devnet/actionscript/articles/avm2overview.pdf
-[24]:https://developer.mozilla.org/en-US/docs/Archive/Mozilla/Tamarin
+[15]:https://github.com/adobe-flash/crossbridge/tree/futures/llvm-3.2/lib/Target/AVM2      
+[16]:http://www.adobe.com/content/dam/Adobe/en/devnet/actionscript/articles/avm2overview.pdf       
+[24]:https://developer.mozilla.org/en-US/docs/Archive/Mozilla/Tamarin      
 
 * Misc
  
